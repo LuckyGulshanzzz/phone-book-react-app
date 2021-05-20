@@ -1,10 +1,13 @@
 import React from 'react';
 import './Header.css';
-const Header = function(){
+const Header = function(props){
 return(
 <div className="header shadow">
-	Phone Book
+	{props.heading}
 </div>
 );
 }
 export default Header;
+
+
+
