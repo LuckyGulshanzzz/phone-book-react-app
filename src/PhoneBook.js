@@ -25,12 +25,25 @@ subscribersList.push(newSubscriber);
 this.setState({subscribersList: subscribersList});
 console.log(this.state.subscribersList);
 }
+
+deleteSubscriberHandler = (subscriberId) =>{
+	let subscribersList = this.state.subscribersList;
+	let subscriberIndex = 0;
+	subscribersList.forEach(function (subscriber, index){
+     if (subscriber.id == subscriberId){
+     	subscriberId = index;
+     }
+	}, this);
+	let newSubscribers= subscribersList;
+	newSubscribers.splice(subscriberIndex, 1);
+	this.setState({subscribers: newSubscribers});
+}
 render(){
 return(
 <Router>
 <div className="main-container">
-	<Route exact path='/' render={(props) => <ShowSubscribers {... props} subscribersList={this.state.subscribersList} />} />
-	<Route exact path='/add' render={(props) => <AddSubscriber {... props} addSubscriberHandler={this.addSubscriberHandler} />} />
+	<Route exact path='/' render={(props) => <ShowSubscribers {... props} subscribersList={this.state.subscribersList} deleteSubscriberHandler={this.deleteSubscriberHandler} />} />
+	<Route exact path='/add' render={({history}, props) => <AddSubscriber history={history} {... props} addSubscriberHandler={this.addSubscriberHandler} />} />
 	</div>
 	</Router>
 	);
