@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import ShowSubscribers from './ShowSubscribers';
 import AddSubscriber from './AddSubscriber';
 import reportWebVitals from './reportWebVitals';
+import PhoneBook from './PhoneBook';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ShowSubscribers />
+    <PhoneBook />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -2,22 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './ShowSubscribers.css';
 class ShowSubscribers extends Component{
-constructor(){
-super();
-this.state = {
-subscribersListToShow: []
-}
-}
-componentDidMount(){
-let newSubscriber = {
-id:1,
-name: "Gulshan",
-phone: "9696996665"
-}
-let subscribersList = this.state.subscribersListToShow;
-subscribersList.push(newSubscriber);
-this.setState({subscribersListToShow:subscribersList});
-}
 render(){
 return(
 <div>
@@ -29,7 +13,7 @@ return(
         <span className="grid-item phone-heading">Phone</span>
       </div>
       {
-      this.state.subscribersListToShow.map(sub => {
+      this.props.subscribersList.map(sub => {
       return <div className= "grid-container" key ={sub.id}>
         <span className="grid-item">{sub.name}</span>
         <span className="grid-item">{sub.phone}</span>
