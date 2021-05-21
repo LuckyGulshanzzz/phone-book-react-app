@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ShowSubscribers from './ShowSubscribers';
-import AddSubscriber from './AddSubscriber';
 import reportWebVitals from './reportWebVitals';
 import PhoneBook from './PhoneBook';
 
